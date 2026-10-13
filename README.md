@@ -75,6 +75,9 @@ En Chrome: `chrome://extensions` → **Modo de desarrollador** → **Cargar desc
 | `npm run typecheck` | `tsc` ×3: principal, módulos puros (sin DOM) y tests |
 | `npm test` | Suite de tests |
 
+### OPCIÓN 3:
+Para Chrome, cargar el archivo.crx existente en hirely3.zip. Eso deberia crear automáticamente la extensión en local.
+
 ## Arquitectura
 
 **Lógica de negocio ↔ DOM.** `field-mapping.ts` y `question-detection.ts` reciben `FieldDescriptor[]` (datos planos y serializables) y devuelven `FieldMatch[]` / `DetectedQuestion[]`. Nunca ven un `Element`. `src/content/dom-fields.ts` es el único sitio que lee elementos (escaneo) y escribe en ellos (llenado). `tsconfig.pure.json` compila los módulos puros **sin la librería DOM**: si alguien referencia `document` o `HTMLElement` en ellos, `npm run typecheck` falla.
