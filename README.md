@@ -75,7 +75,7 @@ En Chrome: `chrome://extensions` → **Modo de desarrollador** → **Cargar desc
 | `npm run typecheck` | `tsc` ×3: principal, módulos puros (sin DOM) y tests |
 | `npm test` | Suite de tests |
 
-### OPCIÓN 3:
+### OPCIÓN 2:
 Para Chrome, cargar el archivo.crx existente en hirely3.zip. Eso deberia crear automáticamente la extensión en local.
 
 ## Arquitectura
